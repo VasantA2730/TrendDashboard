@@ -1,2 +1,2 @@
 # TrendDashboard
-Dashboard for trends in the news
+WIP Dashboard for trends in the news

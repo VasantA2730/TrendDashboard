@@ -10,13 +10,13 @@ model = SentenceTransformer('all-MiniLM-L6-v2')
 
 raw_df = pd.read_json(os.path.join(os.path.dirname(__file__), "..", "..", "data", "News_Category_Dataset_v3.json"), lines=True)
 
-df = raw_df[['headline', 'category']].head(100)
-
 # Generate embeddings, store in a dictionary so we can search for labels afterwards
 
 top_n_dict = {}
 
 def update_dictionary():
+    df = raw_df[['headline', 'category']].sample(1000)
+
     embeddings = {}
 
     for i, x in df.iterrows():
